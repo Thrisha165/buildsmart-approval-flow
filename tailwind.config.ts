@@ -61,6 +61,12 @@ export default {
 					DEFAULT: 'hsl(var(--warning))',
 					foreground: 'hsl(var(--warning-foreground))'
 				},
+				neon: {
+					blue: '#0EA5E9',
+					purple: '#8B5CF6',
+					pink: '#D946EF',
+					orange: '#F97316',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -118,7 +124,17 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'logo-spin': 'logo-spin 2s infinite linear'
-			}
+			},
+			fontSize: {
+				xs: '0.875rem',
+				sm: '1rem',
+				base: '1.125rem',
+				lg: '1.25rem',
+				xl: '1.5rem',
+				'2xl': '1.75rem',
+				'3xl': '2rem',
+				'4xl': '2.5rem',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

@@ -12,7 +12,7 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status, className }) => {
   return (
     <span 
       className={cn(
-        "px-2 py-1 text-xs font-medium rounded-full border",
+        "px-2 py-1 text-sm font-medium rounded-full border neon-text",
         getStatusClass(status),
         className
       )}

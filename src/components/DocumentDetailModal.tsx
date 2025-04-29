@@ -13,30 +13,30 @@ interface DocumentDetailModalProps {
 
 const DocumentDetailModal: React.FC<DocumentDetailModalProps> = ({ document, onClose }) => {
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div 
-        className="bg-white rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col animate-fade-in"
+        className="bg-card rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col animate-fade-in glass-panel"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-4 border-b flex justify-between items-center">
-          <h2 className="text-lg font-semibold">{document.name}</h2>
+          <h2 className="text-xl font-semibold neon-text text-neon-blue">{document.name}</h2>
           <Button variant="ghost" size="icon" onClick={onClose}>
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </Button>
         </div>
         
         <div className="p-4 overflow-y-auto">
-          <div className="mb-4">
-            <h3 className="text-sm font-medium text-muted-foreground">Status</h3>
-            <div className="mt-1">
+          <div className="mb-5">
+            <h3 className="text-base font-medium text-muted-foreground">Status</h3>
+            <div className="mt-2">
               <StatusBadge status={document.status} />
             </div>
           </div>
           
-          <div className="mb-4">
-            <h3 className="text-sm font-medium text-muted-foreground">Document Information</h3>
-            <div className="mt-2 text-sm rounded-lg border p-3 bg-muted/30">
-              <div className="grid grid-cols-2 gap-1">
+          <div className="mb-5">
+            <h3 className="text-base font-medium text-muted-foreground">Document Information</h3>
+            <div className="mt-3 text-base rounded-lg border p-4 bg-secondary/20">
+              <div className="grid grid-cols-2 gap-2">
                 <div className="text-muted-foreground">Document Type:</div>
                 <div className="font-medium">{document.type.charAt(0).toUpperCase() + document.type.slice(1)}</div>
                 
@@ -50,13 +50,16 @@ const DocumentDetailModal: React.FC<DocumentDetailModalProps> = ({ document, onC
           </div>
           
           <div>
-            <h3 className="text-sm font-medium text-muted-foreground mb-3">Approval Timeline</h3>
+            <h3 className="text-base font-medium text-muted-foreground mb-3">Approval Timeline</h3>
             <ApprovalTimeline steps={document.approvalSteps} />
           </div>
         </div>
         
         <div className="p-4 border-t mt-auto">
-          <Button className="w-full" onClick={onClose}>Close</Button>
+          <div className="grid grid-cols-2 gap-3">
+            <Button variant="outline" onClick={onClose} className="text-base">Close</Button>
+            <Button className="text-base">Download</Button>
+          </div>
         </div>
       </div>
     </div>

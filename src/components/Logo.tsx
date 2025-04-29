@@ -16,12 +16,12 @@ const Logo: React.FC<LogoProps> = ({ size = 'md', animated = false }) => {
   return (
     <div className="flex items-center">
       <div className={`${sizeClasses[size]} relative ${animated ? 'animate-logo-spin' : ''}`}>
-        <div className="absolute inset-0 bg-primary rounded-md rotate-45"></div>
-        <div className="absolute inset-0 bg-white rounded-sm flex items-center justify-center transform rotate-45 scale-[0.6]">
-          <div className="bg-primary h-1/2 w-1/2 rounded-sm"></div>
+        <div className="absolute inset-0 bg-neon-blue rounded-md rotate-45 neon-border ring-neon-blue"></div>
+        <div className="absolute inset-0 bg-background rounded-sm flex items-center justify-center transform rotate-45 scale-[0.6]">
+          <div className="bg-neon-blue h-1/2 w-1/2 rounded-sm"></div>
         </div>
       </div>
-      <span className="ml-2 font-bold text-xl text-primary">BuildSmart</span>
+      <span className="ml-2 font-bold text-xl text-neon-blue neon-text">BuildSmart</span>
     </div>
   );
 };

@@ -19,16 +19,16 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-white flex flex-col justify-center items-center z-50">
+    <div className="fixed inset-0 bg-background flex flex-col justify-center items-center z-50">
       <div className="flex flex-col items-center justify-center">
         <Logo size="lg" animated={true} />
-        <h1 className="mt-4 text-2xl font-bold animate-fade-in-delay-1">BuildSmart</h1>
-        <p className="mt-2 text-gray-500 animate-fade-in-delay-2">Streamlining Construction Approvals</p>
+        <h1 className="mt-5 text-3xl font-bold animate-fade-in-delay-1 neon-text text-neon-blue">BuildSmart</h1>
+        <p className="mt-3 text-xl text-muted-foreground animate-fade-in-delay-2">Streamlining Construction Approvals</p>
       </div>
       
       {!loading && (
-        <div className="mt-10 animate-fade-in">
-          <Button onClick={onComplete} className="px-8">
+        <div className="mt-12 animate-fade-in">
+          <Button onClick={onComplete} className="px-10 py-6 text-lg">
             Get Started
           </Button>
         </div>
